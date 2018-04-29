@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('angular-meal-planner App', () => {
+describe('angular-meals-planner App', () => {
   let page: AppPage;
 
   beforeEach(() => {

@@ -1,0 +1,17 @@
+<p>Name: {{meal.name}} </p>
+<p>Ingredients: </p>
+<ul>
+  <li *ngFor="let ingredient of meal.ingredients">
+      <span class="badge">{{ingredient}}</span>
+  </li>
+</ul>
+
+<p>Calories: {{meal.calories}}</p>
+<p>Makro ingredients:</p>
+<ul>
+  <li *ngFor="let makroIngredient of meal.makro">
+    <span class="badge">{{makroIngredient}}</span>
+  </li>
+</ul>
+<br>
+<br>
