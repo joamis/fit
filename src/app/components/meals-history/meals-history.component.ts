@@ -33,7 +33,7 @@ export class MealsHistoryComponent implements OnInit {
           .subscribe(meal => {
             meal.forEach(singeMeal => meals.set(singeMeal.name, singeMeal));
             mealsHistory.forEach(mealHistory => {
-              this.mealsHistory.push(new MealHistoryFullClass(meals.get(mealHistory.mealName), mealHistory.date));
+              this.mealsHistory.push(new MealHistoryFullClass(meals.get(mealHistory.name), mealHistory.date));
             });
           });
       });

@@ -2,7 +2,7 @@ import {MealClass} from './MealClass';
 
 export class MealsHistoryClass {
   constructor(
-    public mealName: string,
+    public name: string,
     public date: string) {}
 }
 

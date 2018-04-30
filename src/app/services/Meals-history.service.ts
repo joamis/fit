@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {of} from 'rxjs/observable/of';
 import {MealsHistoryClass} from '../model/MealsHistoryClass';
 import {MealClass} from '../model/MealClass';
 import {HttpClient} from '@angular/common/http';
@@ -15,4 +14,10 @@ export class MealsHistoryService {
       return this.http.get<MealsHistoryClass[]>(mealHistoryUrl);
   }
 
+  postMealsHistory(meal: MealClass, date: Date) {
+    const mealHistoryRecord: MealsHistoryClass =  new MealsHistoryClass(meal.name, date.toDateString());
+    console.log(mealHistoryRecord);
+    return this.http.post<MealsHistoryClass>(mealHistoryUrl, mealHistoryRecord).
+    subscribe(() => console.log('meal was added to history'));
+  }
 }

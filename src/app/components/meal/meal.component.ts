@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {MealClass} from '../../model/MealClass';
-
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {MealEatenMarkerComponent} from '../meal-eaten-marker/meal-eaten-marker.component';
 
 @Component({
   selector: 'app-meal',
@@ -11,10 +12,15 @@ export class MealComponent implements OnInit {
 
   @Input() meal: MealClass;
 
-  constructor() {
+  constructor(private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
+  }
+
+  open(content) {
+    const modalRef = this.modalService.open(MealEatenMarkerComponent);
+    modalRef.componentInstance.meal = this.meal;
   }
 
 }

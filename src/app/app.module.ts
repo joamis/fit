@@ -10,6 +10,9 @@ import {MealsHistoryService} from './services/Meals-history.service';
 import {HttpClient, HttpClientModule, HttpHandler} from '@angular/common/http';
 import { MealAdditionComponent } from './components/meal-addition/meal-addition.component';
 import {FormsModule} from '@angular/forms';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {MealEatenMarkerComponent} from './components/meal-eaten-marker/meal-eaten-marker.component';
+import { DlDateTimePickerDateModule } from 'angular-bootstrap-datetimepicker';
 
 
 
@@ -20,11 +23,13 @@ import {FormsModule} from '@angular/forms';
     MealsComponent,
     MealHistoryComponent,
     MealsHistoryComponent,
-    MealAdditionComponent
+    MealAdditionComponent,
+    MealEatenMarkerComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, FormsModule
+    BrowserModule, HttpClientModule, FormsModule, DlDateTimePickerDateModule, NgbModule.forRoot()
   ],
+  entryComponents: [MealEatenMarkerComponent  ],
   providers: [ MealService, MealsHistoryService ],
   bootstrap: [AppComponent]
 })
