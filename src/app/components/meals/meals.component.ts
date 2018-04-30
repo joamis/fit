@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MealClass} from '../../model/MealClass';
+import {MealService} from '../../services/Meal.service';
+import {MealsHistoryClass} from '../../model/MealsHistoryClass';
+import {MealsHistoryService} from '../../services/Meals-history.service';
 
 @Component({
   selector: 'app-meals',
@@ -8,14 +11,20 @@ import {MealClass} from '../../model/MealClass';
 })
 export class MealsComponent implements OnInit {
 
-  meals: MealClass[] = []
+  meals: MealClass[] = [];
 
-  constructor() { }
+  constructor( private mealService: MealService) { }
 
   ngOnInit() {
-    this.meals.push( new MealClass('rice with chicken', ['a', 'b'], 123, ['51', '32']));
-    this.meals.push( new MealClass('gnoczajs', ['a', 'b'], 123, ['51', '32']));
-    this.meals.push( new MealClass('smiejzelki', ['a', 'b'], 123, ['51', '32']));
+    this.getMeals();
+    }
+
+
+  getMeals(): void {
+    this.mealService.getMeals()
+      .subscribe(meals => this.meals = meals);
   }
 
 }
+
+

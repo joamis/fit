@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
+import {MealHistoryFullClass} from '../../model/MealsHistoryClass';
 
 @Component({
   selector: 'app-meal-history',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MealHistoryComponent implements OnInit {
 
+  @Input()
+  mealHistory: MealHistoryFullClass;
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

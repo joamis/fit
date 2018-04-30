@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Meal Planner';
+  currentView = 'MEALS';
+
+
+  mealsView = 'MEALS';
+  historyView = 'HISTORY';
+  goToHistoryView() {
+    this.currentView = this.historyView;
+  }
+
+  goToMealsView() {
+    this.currentView = this.mealsView;
+  }
 }

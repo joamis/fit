@@ -1,7 +1,13 @@
 import {MealClass} from './MealClass';
 
-export class MealHistoryClass {
+export class MealsHistoryClass {
+  constructor(
+    public mealName: string,
+    public date: string) {}
+}
+
+export class MealHistoryFullClass {
   constructor(
     public meal: MealClass,
-    public time: Date) {}
+    public date: string) {}
 }
