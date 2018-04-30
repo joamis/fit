@@ -12,6 +12,7 @@ export class MealService {
   constructor(private http: HttpClient) { }
 
   getMeals(): Observable<MealClass[]> {
+    console.log(mealUrl);
     return this.http.get<MealClass[]>(mealUrl);
   }
 
