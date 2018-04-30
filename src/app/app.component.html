@@ -1,6 +1,8 @@
 <h1>{{title}}</h1>
 <button [hidden] ="currentView!='MEALS'" (click) ="goToHistoryView()"> Historia posiłków </button>
+<button [hidden] ="currentView!='MEALS'" (click) ="goToAdditionView()"> Dodaj posiłek</button>
 <app-meals-history [hidden]="currentView!='HISTORY'"></app-meals-history>
+<app-meal-addition [hidden]="currentView!='ADDITION'"></app-meal-addition>
+<app-meals [hidden]="currentView!='MEALS'" (click)="goToMealsView()"></app-meals>
 <button [hidden]="currentView!='HISTORY'" (click)="goToMealsView()">Wróć</button>
-<app-meals [hidden]="currentView!='MEALS'"></app-meals>
 <button [hidden]="currentView!='ADDITION'" (click)="goToMealsView()">Wróć</button>

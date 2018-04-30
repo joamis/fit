@@ -16,7 +16,8 @@ export class MealService {
     return this.http.get<MealClass[]>(mealUrl);
   }
 
-  postMeals(meal: MealClass) {
+  postMeal(meal: MealClass) {
+    console.log(meal);
     this.http.post<MealClass>(mealUrl, meal ).subscribe(() => console.log('meal was added'));
   }
 

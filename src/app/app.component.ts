@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'Meal Planner';
   currentView = 'MEALS';
 
-
+  additionView = 'ADDITION';
   mealsView = 'MEALS';
   historyView = 'HISTORY';
   goToHistoryView() {
@@ -18,5 +18,8 @@ export class AppComponent {
 
   goToMealsView() {
     this.currentView = this.mealsView;
+  }
+  goToAdditionView() {
+    this.currentView = this.additionView;
   }
 }

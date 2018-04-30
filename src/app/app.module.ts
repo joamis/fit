@@ -8,6 +8,8 @@ import { MealHistoryComponent } from './components/meal-history/meal-history.com
 import { MealsHistoryComponent } from './components/meals-history/meals-history.component';
 import {MealsHistoryService} from './services/Meals-history.service';
 import {HttpClient, HttpClientModule, HttpHandler} from '@angular/common/http';
+import { MealAdditionComponent } from './components/meal-addition/meal-addition.component';
+import {FormsModule} from '@angular/forms';
 
 
 
@@ -17,10 +19,11 @@ import {HttpClient, HttpClientModule, HttpHandler} from '@angular/common/http';
     MealComponent,
     MealsComponent,
     MealHistoryComponent,
-    MealsHistoryComponent
+    MealsHistoryComponent,
+    MealAdditionComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule
+    BrowserModule, HttpClientModule, FormsModule
   ],
   providers: [ MealService, MealsHistoryService ],
   bootstrap: [AppComponent]
