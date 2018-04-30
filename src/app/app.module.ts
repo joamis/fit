@@ -13,6 +13,7 @@ import {FormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MealEatenMarkerComponent} from './components/meal-eaten-marker/meal-eaten-marker.component';
 import { DlDateTimePickerDateModule } from 'angular-bootstrap-datetimepicker';
+import {InternalNotificationService} from './services/internal-notification.service';
 
 
 
@@ -30,7 +31,7 @@ import { DlDateTimePickerDateModule } from 'angular-bootstrap-datetimepicker';
     BrowserModule, HttpClientModule, FormsModule, DlDateTimePickerDateModule, NgbModule.forRoot()
   ],
   entryComponents: [MealEatenMarkerComponent  ],
-  providers: [ MealService, MealsHistoryService ],
+  providers: [ MealService, MealsHistoryService, InternalNotificationService ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

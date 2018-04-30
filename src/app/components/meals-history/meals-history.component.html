@@ -1,2 +1,2 @@
-<app-meal-history *ngFor="let mealHistory of this.mealsHistory" [mealHistory]="mealHistory"></app-meal-history>
+<app-meal-history (notify)="reloadData($event)" *ngFor="let mealHistory of this.mealsHistory" [mealHistory]="mealHistory"></app-meal-history>
 

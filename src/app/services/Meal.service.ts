@@ -16,12 +16,8 @@ export class MealService {
     return this.http.get<MealClass[]>(mealUrl);
   }
 
-  postMeal(meal: MealClass) {
+  postMeal(meal: MealClass): Observable<MealClass> {
     console.log(meal);
-    this.http.post<MealClass>(mealUrl, meal ).subscribe(() => console.log('meal was added'));
-  }
-
-  getMealByName(): Observable<MealClass> {
-    return of(MEAL_BY_NAME_MOCK);
+    return this.http.post<MealClass>(mealUrl, meal);
   }
 }

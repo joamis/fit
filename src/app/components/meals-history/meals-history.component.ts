@@ -3,6 +3,7 @@ import {MealsHistoryService} from '../../services/Meals-history.service';
 import {MealService} from '../../services/Meal.service';
 import {MealHistoryFullClass} from '../../model/MealsHistoryClass';
 import {MealClass} from '../../model/MealClass';
+import {InternalNotificationService} from '../../services/internal-notification.service';
 
 @Component({
   selector: 'app-meals-history',
@@ -17,11 +18,17 @@ export class MealsHistoryComponent implements OnInit {
 
 
   constructor(private mealService: MealService,
-              private mealsHistoryService: MealsHistoryService) {
+              private mealsHistoryService: MealsHistoryService,
+              private internalNotificationService: InternalNotificationService) {
   }
 
   ngOnInit() {
     this.getMealsHistory();
+    this.internalNotificationService.getMealsHistoryNotificationObject()
+      .subscribe(() => {
+        this.mealsHistory = [];
+        this.getMealsHistory();
+      });
   }
 
 
@@ -33,11 +40,9 @@ export class MealsHistoryComponent implements OnInit {
           .subscribe(meal => {
             meal.forEach(singeMeal => meals.set(singeMeal.name, singeMeal));
             mealsHistory.forEach(mealHistory => {
-              this.mealsHistory.push(new MealHistoryFullClass(meals.get(mealHistory.name), mealHistory.date));
+              this.mealsHistory.push(new MealHistoryFullClass(mealHistory._id, meals.get(mealHistory.name), mealHistory.date));
             });
           });
       });
   }
-
-
 }
