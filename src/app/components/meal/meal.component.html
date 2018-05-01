@@ -1,18 +1,24 @@
-<p>Name: {{meal.name}} </p>
-<p>Ingredients: </p>
-<ul>
-  <li *ngFor="let ingredient of meal.ingredients">
-      <span class="badge">{{ingredient}}</span>
-  </li>
-</ul>
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<div class="jumbotron h-100">
+  <div class="row container">
+    <div class="col-md-8">
+      <div class="row">
+      <p class="labels">Name:</p><p class="items"> {{meal.name}}</p>
+      </div>
+      <div class="row">
+        <p class="labels">Ingredients:</p><p class="items">{{meal.ingredients}}</p>
+      </div>
+      <div class="row">
+        <p class="labels">Calories:</p><p class="items"> {{meal.calories}}</p>
+      </div>
+      <div class="row">
+        <p class="labels">Makro:</p><p class="items">{{meal.makro}}</p>
+      </div>
+    </div>
+    <div class="col-md-4 align-self-center">
+      <button class="btn btn-secondary" (click)="open()">Add to your plan</button>
+    </div>
 
-<p>Calories: {{meal.calories}}</p>
-<p>Makro ingredients:</p>
-<ul>
-  <li *ngFor="let makroIngredient of meal.makro">
-    <span class="badge">{{makroIngredient}}</span>
-  </li>
-</ul>
-<button class="btn" (click)="open()">dodaj do historii</button>
-<br>
-<br>
+  </div>
+
+</div>

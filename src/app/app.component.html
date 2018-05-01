@@ -9,13 +9,17 @@
   <h4 class="logo-text">{{title}}</h4>
   </a>
   <ul class="nav">
-    <li><a [hidden]="currentView!='MEALS'" (click)="goToHistoryView()">Historia</a></li>
-    <li><a [hidden]="currentView!='MEALS'" (click)="goToAdditionView()">Dodaj posilek</a></li>
-    <li><a [hidden]="currentView!='HISTORY'" (click)="goToMealsView()">Wróć</a></li>
-    <li><a [hidden]="currentView!='ADDITION'" (click)="goToMealsView()">Wróć</a></li>
+    <li><a class="btn btn-link" (click)="goToMealsView()" style="font-size:100%">Home</a></li>
+    <li><a class="btn btn-link" (click)="goToHistoryView()" style="font-size:100%">Meals history</a></li>
+    <li><a class="btn btn-link" (click)="goToAdditionView()" style="font-size:100%">Add meal to list</a></li>
+
   </ul>
 </div>
 </nav>
-<app-meals-history [hidden]="currentView!='HISTORY'"></app-meals-history>
-<app-meal-addition [hidden]="currentView!='ADDITION'"></app-meal-addition>
-
+<div class="container-fluid row">
+  <div class="offset-3 col-md-6 main-content">
+    <app-meals-history [hidden]="currentView!='HISTORY'"></app-meals-history>
+    <app-meal-addition [hidden]="currentView!='ADDITION'"></app-meal-addition>
+    <app-meals [hidden]="currentView!='MEALS'"></app-meals>
+  </div>
+</div>
