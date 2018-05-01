@@ -1,8 +1,21 @@
-<h1>{{title}}</h1>
-<button [hidden] ="currentView!='MEALS'" (click) ="goToHistoryView()"> Historia posiłków </button>
-<button [hidden] ="currentView!='MEALS'" (click) ="goToAdditionView()"> Dodaj posiłek</button>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+  <a class="navbar-brand">
+  <h2 class="logo">
+    <i class="fa fa-balance-scale fa-3x "></i>
+  </h2>
+  <h4 class="logo-text">{{title}}</h4>
+  </a>
+  <ul class="nav">
+    <li><a [hidden]="currentView!='MEALS'" (click)="goToHistoryView()">Historia</a></li>
+    <li><a [hidden]="currentView!='MEALS'" (click)="goToAdditionView()">Dodaj posilek</a></li>
+    <li><a [hidden]="currentView!='HISTORY'" (click)="goToMealsView()">Wróć</a></li>
+    <li><a [hidden]="currentView!='ADDITION'" (click)="goToMealsView()">Wróć</a></li>
+  </ul>
+</div>
+</nav>
 <app-meals-history [hidden]="currentView!='HISTORY'"></app-meals-history>
 <app-meal-addition [hidden]="currentView!='ADDITION'"></app-meal-addition>
-<app-meals [hidden]="currentView!='MEALS'" (click)="goToMealsView()"></app-meals>
-<button [hidden]="currentView!='HISTORY'" (click)="goToMealsView()">Wróć</button>
-<button [hidden]="currentView!='ADDITION'" (click)="goToMealsView()">Wróć</button>
+
