@@ -11,7 +11,9 @@ import {InternalNotificationService} from '../../services/internal-notification.
 })
 export class MealEatenMarkerComponent implements OnInit {
 
-  constructor(public activeModal: NgbActiveModal, private mealHistoryService: MealsHistoryService,private internalNotificationService: InternalNotificationService) { }
+  constructor(public activeModal: NgbActiveModal, private mealHistoryService: MealsHistoryService,
+              private internalNotificationService: InternalNotificationService) {
+  }
 
   @Input() meal: MealClass;
 
@@ -21,8 +23,7 @@ export class MealEatenMarkerComponent implements OnInit {
   }
 
   markAsEaten() {
-    this.mealHistoryService.postMealsHistory(this.meal, this.date).
-    subscribe(() => {
+    this.mealHistoryService.postMealsHistory(this.meal, this.date).subscribe(() => {
       console.log('meal was added to history');
       this.internalNotificationService.notifyMealsHistoryChanged();
     });

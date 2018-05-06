@@ -3,21 +3,26 @@ import {Observable} from 'rxjs/Observable';
 import {MealsHistoryClass} from '../model/MealsHistoryClass';
 import {MealClass} from '../model/MealClass';
 import {HttpClient} from '@angular/common/http';
-import {getDeleteMealHistoryUrl, mealHistoryUrl} from '../api';
+import {getDeleteMealHistoryUrl, getPostMealsHistoryUrl, getUrlWithToken, mealHistoryUrl} from '../api';
+import {LoginService} from './login.service';
 
 
 @Injectable()
 export class MealsHistoryService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private loginService: LoginService) { }
 
   getMealsHistory(): Observable<MealsHistoryClass[]> {
-      return this.http.get<MealsHistoryClass[]>(mealHistoryUrl);
+      const token = this.loginService.getAuthKey();
+      const user = this.loginService.getUserName();
+      return this.http.get<MealsHistoryClass[]>(getPostMealsHistoryUrl(user, token));
   }
 
-  postMealsHistory(meal: MealClass, date: Date) : Observable<MealsHistoryClass> {
-    const mealHistoryRecord: MealsHistoryClass =  new MealsHistoryClass('', meal.name, date.toDateString());
+  postMealsHistory(meal: MealClass, date: Date): Observable<MealsHistoryClass> {
+    const token = this.loginService.getAuthKey();
+    const username = this.loginService.getUserName();
+    const mealHistoryRecord: MealsHistoryClass =  new MealsHistoryClass('', username, meal.name, date.toDateString());
     console.log(mealHistoryRecord);
-    return this.http.post<MealsHistoryClass>(mealHistoryUrl, mealHistoryRecord)
+    return this.http.post<MealsHistoryClass>(getUrlWithToken(mealHistoryUrl, token), mealHistoryRecord);
   }
 
   delFromHistory(id: string): Observable<Object> {

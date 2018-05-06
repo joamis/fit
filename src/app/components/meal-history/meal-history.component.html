@@ -1,2 +1,29 @@
-<p>{{mealHistory.meal.name + " " + mealHistory.date}}</p>
-<button class="btn" (click)="delete()">usun z historii</button>
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<div class="jumbotron h-100">
+  <div class="row container">
+    <div class="col-md-8">
+      <div class="row">
+        <p class="labels">Name:</p><p class="items"> {{mealHistory.meal.name}}</p>
+      </div>
+      <div class="row">
+        <p class="labels">Date:</p><p class="items">{{mealHistory.date}}</p>
+      </div>
+      <div class="row">
+        <p class="labels">Ingredients:</p><p class="items"> {{mealHistory.meal.ingredients}}</p>
+      </div>
+      <div class="row">
+        <p class="labels">Calories:</p><p class="items">{{mealHistory.meal.calories}}</p>
+      </div>
+      <div class="row">
+        <p class="labels">Makro:</p><p class="items">{{mealHistory.meal.makro}}</p>
+      </div>
+    </div>
+    <div class="col-md-4 align-self-center">
+      <button class="btn btn-secondary" (click)="delete()">Delete from history</button>
+    </div>
+
+  </div>
+
+</div>
+
+

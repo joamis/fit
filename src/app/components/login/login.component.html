@@ -1,0 +1,21 @@
+<div class="jumbotron" style="margin-top:5%; margin-bottom:5%" >
+  <div class="container">
+    <form #mealAddition="ngForm" (ngSubmit)="postUser()">
+
+      <div class="form-group">
+        <label class='labels' for="login">Login</label>
+        <input type="text" class="form-control" id="login" name="login"
+               required
+               [(ngModel)]="user.login">
+      </div>
+
+      <div class="form-group">
+        <label class='labels' for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password"
+               [(ngModel)]="user.password">
+      </div>
+
+      <button type="submit" class="btn btn-secondary float-right">Add user</button>
+    </form>
+  </div>
+</div>
