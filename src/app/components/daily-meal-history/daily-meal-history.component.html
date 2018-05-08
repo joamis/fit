@@ -1,0 +1,6 @@
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<div class="jumbotron daily-jumbo h-100">
+  <h2>Zjedzone kalorie {{getEatenCalories()}}</h2>
+  <h2>Zapotrzebowanie kaloryczne: {{getCaloriesRequired()}}</h2>
+  <app-meal-history *ngFor="let mealHistory of this.mealsHistory" [mealHistory]="mealHistory"></app-meal-history>
+</div>

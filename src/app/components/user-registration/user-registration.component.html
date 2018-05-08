@@ -1,0 +1,72 @@
+<div class="jumbotron" style="margin-top:5%; margin-bottom:5%" >
+  <div class="container">
+    <form #mealAddition="ngForm" (ngSubmit)="registerUser()">
+      <div class="form-group">
+        <label class='labels' for="login">Name</label>
+        <input type="text" class="form-control" id="name" name="name"
+               required
+               [(ngModel)]="user.name">
+      </div>
+      <div class="form-group">
+        <label class='labels' for="login">Surname</label>
+        <input type="text" class="form-control" id="surname" name="surname"
+               required
+               [(ngModel)]="user.surname">
+      </div>
+      <div class="form-group">
+        <label class='labels' for="login">Login</label>
+        <input type="text" class="form-control" id="login" name="login"
+               required
+               [(ngModel)]="user.login">
+      </div>
+
+      <div class="form-group">
+        <label class='labels' for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password"
+               [(ngModel)]="user.password">
+      </div>
+
+      <div class="form-group">
+        <label class='labels' for="weight">Weight</label>
+        <input type="text" class="form-control" id="weight" name="weight"
+               [(ngModel)]="user.weight">
+      </div>
+
+      <div class="form-group">
+        <label class='labels' for="height">Height</label>
+        <input type="text" class="form-control" id="height" name="height"
+               [(ngModel)]="user.height">
+      </div>
+
+      <div class="form-group">
+        <p class='labels'>Sex</p>
+      <label class="radio-inline">
+        <input type="radio" name="male"  value="1" [(ngModel)]="user.isMale">Men
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="female" value="0" [(ngModel)]="user.isMale" >Women
+      </label>
+      </div>
+
+      <div class="form-group">
+        <p class="labels">Physical activity ratio</p>
+        <div class="radio">
+          <input type="radio" name="sitting_lifestyle"  value="1.0" [(ngModel)]="user.physicalActivityRatio">Largely sedentary lifestyle, physical activity: lack</div>
+        <div class="radio">
+        <input type="radio" name="sitting_job" value="1.2" [(ngModel)]="user.physicalActivityRatio" >Sitting job, physical activity: low level</div>
+        <div class="radio">
+          <input type="radio" name="not_sitting_job" value="1.4" [(ngModel)]="user.physicalActivityRatio" >Not a sitting job, physical activity: twice a week</div>
+        <div class="radio">
+          <input type="radio" name="light_physical_job" value="1.6" [(ngModel)]="user.physicalActivityRatio" >Light physical job, physical activity: three/four times a week</div>
+        <div class="radio">
+          <input type="radio" name="physical_job" value="1.8" [(ngModel)]="user.physicalActivityRatio" >Physical job, physical activity: five times a week</div>
+        <div class="radio">
+          <input type="radio" name="hard_physical_job" value="2.0" [(ngModel)]="user.physicalActivityRatio" >Hard physical job, physical activity: five times a week</div>
+      </div>
+
+
+      <button type="submit" class="btn btn-secondary float-right">Register</button>
+      <button class="btn btn-secondary float-right" (click)="goToLogin()">Back</button>
+    </form>
+  </div>
+</div>

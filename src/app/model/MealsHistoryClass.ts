@@ -5,12 +5,12 @@ export class MealsHistoryClass {
     public _id: string = '',
     public user: string = '',
     public name: string,
-    public date: string) {}
+    public date: Date) {}
 }
 
 export class MealHistoryFullClass {
   constructor(
     public _id: string = '',
-    public meal: MealClass,
-    public date: string) {}
+    public meal: MealClass = new MealClass(),
+    public date: Date) {}
 }

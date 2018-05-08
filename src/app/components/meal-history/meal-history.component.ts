@@ -1,6 +1,5 @@
-import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {MealHistoryFullClass} from '../../model/MealsHistoryClass';
-import {MealEatenMarkerComponent} from '../meal-eaten-marker/meal-eaten-marker.component';
 import {MealsHistoryService} from '../../services/Meals-history.service';
 import {InternalNotificationService} from '../../services/internal-notification.service';
 
@@ -27,6 +26,11 @@ export class MealHistoryComponent implements OnInit {
       console.log('Product deleted')
       this.internalNotificationService.notifyMealsHistoryChanged();
     });
+  }
+
+  getMealHistoryDate(): string {
+    console.log(this.mealHistory.date)
+    return new Date(this.mealHistory.date).toUTCString();
   }
 
 }

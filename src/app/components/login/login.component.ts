@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CredentialsClass} from '../../model/CredentialsClass';
 import {LoginService} from '../../services/login.service';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,14 +9,27 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private loginService: LoginService, private router: Router) { }
+  constructor(private loginService: LoginService) {
+  }
+
+  loginView = 'LOGIN';
+  registerView = 'REGISTER';
+  currentView = this.loginView;
 
   user: CredentialsClass = new CredentialsClass();
+
   ngOnInit() {
   }
 
   postUser() {
-    console.log('user w');
     this.loginService.loginUser(this.user);
+  }
+
+  goToRegisterView() {
+    this.currentView = this.registerView;
+  }
+
+  goToLogin($event: string) {
+    this.currentView = this.loginView;
   }
 }

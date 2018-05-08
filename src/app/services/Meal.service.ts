@@ -18,4 +18,8 @@ export class MealService {
     console.log(meal);
     return this.http.post<MealClass>(mealUrl, meal);
   }
+
+  getMealId(): Observable<String> {
+    return this.http.get<String>(mealUrl);
+  }
 }

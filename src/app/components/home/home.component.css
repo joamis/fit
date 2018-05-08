@@ -4,10 +4,7 @@ h2, h4, h6 {
 
 h4{
   font-family: 'Pacifico', cursive;
-  font-size: 60px;
-  margin-right: 40px;
-  margin-left: 20px;
-  margin-top: 10px;
+  font-size: 270%;
   font-color: black !important;
 
 
@@ -15,10 +12,6 @@ h4{
 
 .nav li{
   display: inline-block !important;
-  margin-left: 20px;
-  margin-top: 50px;
   font-family: 'Pacifico';
-  font-size: 25px;
-  float: right;
-
+  font-size: 120%;
 }

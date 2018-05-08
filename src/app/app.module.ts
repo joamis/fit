@@ -20,6 +20,10 @@ import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
 import { StartComponent } from './components/start/start.component';
 import {AuthGuard} from './components/guards/auth.guard';
+import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
+import {RegistrationService} from './services/registration.service';
+import {FileUploadModule} from 'ng2-file-upload';
+import { DailyMealHistoryComponent } from './components/daily-meal-history/daily-meal-history.component';
 
 
 const appRoutes: Routes = [
@@ -39,13 +43,16 @@ const appRoutes: Routes = [
     MealEatenMarkerComponent,
     LoginComponent,
     HomeComponent,
-    StartComponent
+    StartComponent,
+    UserRegistrationComponent,
+    DailyMealHistoryComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, FormsModule, DlDateTimePickerDateModule, NgbModule.forRoot(), RouterModule.forRoot(appRoutes),
+    BrowserModule, HttpClientModule, FormsModule, DlDateTimePickerDateModule, NgbModule.forRoot(),
+    RouterModule.forRoot(appRoutes), FileUploadModule
   ],
   entryComponents: [MealEatenMarkerComponent  ],
-  providers: [ MealService, MealsHistoryService, InternalNotificationService, LoginService, AuthGuard ],
+  providers: [ MealService, MealsHistoryService, InternalNotificationService, LoginService, AuthGuard, RegistrationService ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

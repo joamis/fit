@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from '../../services/login.service';
 import {Router} from '@angular/router';
+import {MealClass} from '../../model/MealClass';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +11,10 @@ import {Router} from '@angular/router';
 export class HomeComponent implements OnInit {
   title = 'Meal Planner';
   currentView = 'MEALS';
-
   additionView = 'ADDITION';
   mealsView = 'MEALS';
   historyView = 'HISTORY';
-  signInView = 'SIGNIN';
-  signOutView = 'SIGNOUT';
+
 
   constructor(private loginService: LoginService, private router: Router) { }
   goToHistoryView() {

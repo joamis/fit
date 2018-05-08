@@ -1,4 +1,4 @@
-<div class="jumbotron" style="margin-top:5%; margin-bottom:5%" >
+<div [hidden]="currentView!=this.loginView" class="jumbotron" style="margin-top:5%; margin-bottom:5%" >
   <div class="container">
     <form #mealAddition="ngForm" (ngSubmit)="postUser()">
 
@@ -14,8 +14,12 @@
         <input type="password" class="form-control" id="password" name="password"
                [(ngModel)]="user.password">
       </div>
-
-      <button type="submit" class="btn btn-secondary float-right">Add user</button>
+      <button type="submit" class="btn btn-secondary float-right">Log in</button>
     </form>
+    <button class="btn btn-secondary float-right" (click)="goToRegisterView()">Sign in</button>
   </div>
+</div>
+
+<div [hidden]="currentView!=this.registerView">
+  <app-user-registration (notify)="goToLogin($event)" ></app-user-registration>
 </div>

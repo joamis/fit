@@ -20,14 +20,15 @@ export class MealsHistoryService {
   postMealsHistory(meal: MealClass, date: Date): Observable<MealsHistoryClass> {
     const token = this.loginService.getAuthKey();
     const username = this.loginService.getUserName();
-    const mealHistoryRecord: MealsHistoryClass =  new MealsHistoryClass('', username, meal.name, date.toDateString());
+    const mealHistoryRecord: MealsHistoryClass =  new MealsHistoryClass('', username, meal.name, date);
     console.log(mealHistoryRecord);
     return this.http.post<MealsHistoryClass>(getUrlWithToken(mealHistoryUrl, token), mealHistoryRecord);
   }
 
   delFromHistory(id: string): Observable<Object> {
     console.log('Usuwanie produktu');
-    return this.http.delete(getDeleteMealHistoryUrl(id));
+    const token = this.loginService.getAuthKey();
+    return this.http.delete(getUrlWithToken(getDeleteMealHistoryUrl(id), token));
   }
 
 }

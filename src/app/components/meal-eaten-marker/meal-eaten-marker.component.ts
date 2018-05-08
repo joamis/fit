@@ -29,4 +29,8 @@ export class MealEatenMarkerComponent implements OnInit {
     });
     this.activeModal.dismiss('Meal history record added');
   }
+
+  getFormattedDate() {
+    return this.date.toUTCString();
+  }
 }

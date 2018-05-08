@@ -1,31 +1,42 @@
-<div class="jumbotron" style="margin-top:5%; margin-bottom:5%" >
-<div class="container">
-  <form #mealAddition="ngForm" (ngSubmit)="postMeal()">
-    <div class="form-group">
-      <label class='labels' for="name">Name</label>
-      <input type="text" class="form-control" id="name" name="name"
-             required
-             [(ngModel)]="meal.name">
-    </div>
+<div class="jumbotron" style="margin-top:5%; margin-bottom:5%">
+  <div class="container">
+    <form #mealAddition="ngForm" (ngSubmit)="postMeal()">
+      <div class="form-group">
+        <label class='labels' for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name"
+               required
+               [(ngModel)]="meal.name">
+      </div>
 
-    <div class="form-group">
-      <label class='labels' for="ingredients">Ingredients</label>
-      <input type="text" class="form-control" id="ingredients" name="ingredients"
-             [(ngModel)]="meal.ingredients">
-    </div>
+      <div class="form-group">
+        <label class='labels' for="ingredients">Ingredients</label>
+        <input type="text" class="form-control input-lg" id="ingredients" name="ingredients"
+               [(ngModel)]="meal.ingredients">
+      </div>
 
-    <div class="form-group">
-      <label class='labels' for="calories">Calories</label>
-      <input type="text" class="form-control" id="calories" name="calories"
-             [(ngModel)]="meal.calories">
-    </div>
+      <div class="form-group">
+        <label class='labels' for="calories">Calories</label>
+        <input type="number" class="form-control" id="calories" name="calories"
+               [(ngModel)]="meal.calories"> [kCal]
+      </div>
 
-    <div class="form-group">
-      <label class='labels' for="makro">Makro</label>
-      <input type="text" class="form-control" id="makro" name="makro"
-             [(ngModel)]="meal.makro">
-    </div>
-    <button type="submit" class="btn btn-secondary float-right">Add to the list</button>
-  </form>
-</div>
+      <div class="form-group">
+        <label class='labels' for="Carbs">Carbs</label>
+        <input type="text" class="form-control" id="Carbs" name="Carbs"
+               [(ngModel)]="meal.makro[0]">
+      </div>
+      <div class="form-group">
+        <label class='labels' for="Protein">Protein</label>
+        <input type="text" class="form-control" id="Protein" name="Protein"
+               [(ngModel)]="meal.makro[1]">
+      </div>
+      <div class="form-group">
+        <label class='labels' for="Sugar">Sugar</label>
+        <input type="text" class="form-control" id="Sugar" name="Sugar"
+               [(ngModel)]="meal.makro[2]">
+      </div>
+      <input type="file" ng2FileSelect [uploader]="uploader"/>
+      <button type="submit" class="btn btn-secondary float-right">Add to the list</button>
+    </form>
+  </div>
 </div>

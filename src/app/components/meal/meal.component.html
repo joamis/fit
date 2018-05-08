@@ -9,16 +9,18 @@
         <p class="labels">Ingredients:</p><p class="items">{{meal.ingredients}}</p>
       </div>
       <div class="row">
-        <p class="labels">Calories:</p><p class="items"> {{meal.calories}}</p>
+        <p class="labels">Calories:</p><p class="items"> {{meal.calories}} [kCal]M</p>
       </div>
       <div class="row">
-        <p class="labels">Makro:</p><p class="items">{{meal.makro}}</p>
+        <p class="labels">Carbs:</p><p class="items"> {{meal.makro[0]}} [g] </p>
+        <p class="labels">Protein:</p><p class="items"> {{meal.makro[1]}} [g] </p>
+        <p class="labels">Sugars:</p><p class="items"> {{meal.makro[2]}} [g] </p>
       </div>
     </div>
     <div class="col-md-4 align-self-center">
       <button class="btn btn-secondary" (click)="open()">Add to your plan</button>
     </div>
-
-  </div>
-
+    <img src={{this.getImageUlr()}}>
+    </div>
 </div>
+
