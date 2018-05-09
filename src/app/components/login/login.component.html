@@ -1,5 +1,5 @@
-<div [hidden]="currentView!=this.loginView" class="jumbotron" style="margin-top:5%; margin-bottom:5%" >
-  <div class="container">
+<div [hidden]="currentView!=this.loginView" class="jumbotron h-100" style="margin-top:5%; margin-bottom:5%" >
+  <div class="jumbotron h-100" style="margin-top:5%; margin-bottom:5%; margin-right: 25%; margin-left: 25%">
     <form #mealAddition="ngForm" (ngSubmit)="postUser()">
 
       <div class="form-group">
@@ -16,7 +16,7 @@
       </div>
       <button type="submit" class="btn btn-secondary float-right">Log in</button>
     </form>
-    <button class="btn btn-secondary float-right" (click)="goToRegisterView()">Sign in</button>
+    <button class="btn btn-secondary float-right" style="margin-right: 2%" (click)="goToRegisterView()">Sign in</button>
   </div>
 </div>
 

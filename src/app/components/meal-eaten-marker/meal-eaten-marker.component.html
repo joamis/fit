@@ -1,10 +1,10 @@
 <div class="modal-header">
-  Wybierz czas zjedzenia posiłku <br> [{{getFormattedDate()}}]
+  Choose the time of eating: <br> [{{getFormattedDate()}}]
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body modal-lg">
   <dl-date-time-picker [(ngModel)]="date"></dl-date-time-picker>
-  <button class="btn-success float-right" (click)="markAsEaten()">Dodaj posiłek</button>
+  <button class="btn-success float-right" (click)="markAsEaten()">Add meal</button>
 </div>

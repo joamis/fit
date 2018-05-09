@@ -5,13 +5,12 @@ h2, h4, h6 {
 h4{
   font-family: 'Pacifico', cursive;
   font-size: 270%;
-  font-color: black !important;
 
 
 }
 
-.nav li{
+.navbar li{
   display: inline-block !important;
-  font-family: 'Pacifico';
+  font-family: 'Pacifico', cursive;
   font-size: 120%;
 }

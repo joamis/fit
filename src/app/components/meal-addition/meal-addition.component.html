@@ -1,5 +1,7 @@
-<div class="jumbotron" style="margin-top:5%; margin-bottom:5%">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="jumbotron">
   <div class="container">
+    <h2 class="labels text-center">New meal</h2><br>
     <form #mealAddition="ngForm" (ngSubmit)="postMeal()">
       <div class="form-group">
         <label class='labels' for="name">Name</label>
@@ -15,23 +17,23 @@
       </div>
 
       <div class="form-group">
-        <label class='labels' for="calories">Calories</label>
+        <label class='labels' for="calories">Calories [kCal]</label>
         <input type="number" class="form-control" id="calories" name="calories"
-               [(ngModel)]="meal.calories"> [kCal]
+               [(ngModel)]="meal.calories">
       </div>
 
       <div class="form-group">
-        <label class='labels' for="Carbs">Carbs</label>
+        <label class='labels' for="Carbs">Carbs [g]</label>
         <input type="text" class="form-control" id="Carbs" name="Carbs"
                [(ngModel)]="meal.makro[0]">
       </div>
       <div class="form-group">
-        <label class='labels' for="Protein">Protein</label>
+        <label class='labels' for="Protein">Proteins [g]</label>
         <input type="text" class="form-control" id="Protein" name="Protein"
                [(ngModel)]="meal.makro[1]">
       </div>
       <div class="form-group">
-        <label class='labels' for="Sugar">Sugar</label>
+        <label class='labels' for="Sugar">Sugars [g]</label>
         <input type="text" class="form-control" id="Sugar" name="Sugar"
                [(ngModel)]="meal.makro[2]">
       </div>

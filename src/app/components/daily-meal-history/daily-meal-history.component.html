@@ -1,6 +1,6 @@
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="jumbotron daily-jumbo h-100">
-  <h2>Zjedzone kalorie {{getEatenCalories()}}</h2>
-  <h2>Zapotrzebowanie kaloryczne: {{getCaloriesRequired()}}</h2>
-  <app-meal-history *ngFor="let mealHistory of this.mealsHistory" [mealHistory]="mealHistory"></app-meal-history>
+  <h2>The amount of eaten calories: {{getEatenCalories()}}</h2>
+  <h2>Your calorie target: {{getCaloriesRequired()}}</h2>
 </div>
+<app-meal-history *ngFor="let mealHistory of this.mealsHistory" [mealHistory]="mealHistory"></app-meal-history>

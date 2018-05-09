@@ -1,4 +1,4 @@
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="jumbotron h-100">
   <div class="row container">
     <div class="col-md-8">
@@ -15,7 +15,9 @@
         <p class="labels">Calories:</p><p class="items">{{mealHistory.meal.calories}}</p>
       </div>
       <div class="row">
-        <p class="labels">Makro:</p><p class="items">{{mealHistory.meal.makro}}</p>
+        <p class="labels">Carbs:</p> <p class="items">{{mealHistory.meal.makro[0]}}</p>
+        <p class="labels">Proteins:</p> <p class="items">{{mealHistory.meal.makro[1]}}</p>
+        <p class="labels">Sugars:</p> <p class="items">{{mealHistory.meal.makro[2]}}</p>
       </div>
     </div>
     <div class="col-md-4 align-self-center">
